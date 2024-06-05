@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: vniitesttask
+
+  datasource:
+    url: jdbc:h2:file:./tmp/testdb;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 20
+
+  flyway:
+    url: jdbc:h2:file:./tmp/testdb
+    user: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    baseline-on-migrate: true
+
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
